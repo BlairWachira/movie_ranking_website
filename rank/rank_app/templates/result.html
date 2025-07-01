@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} - Movie Result</title>
+    <link rel="stylesheet" href="{% static 'rank_app/results.css' %}" />
+  </head>
+  <body>
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% else %}
+    <div class="movie-container">
+      <div class="poster">
+        {% if poster %}
+        <img src="{{ poster }}" alt="Poster for {{ title }}" />
+        {% else %}
+        <div class="poster-placeholder">MOVIE POSTER</div>
+        {% endif %}
+      </div>
+
+      <div class="info">
+        <h1>{{ title }}</h1>
+        <p class="rating"><strong>Movie Rating:</strong> {{ rating }}</p>
+        <p class="genre"><strong>Genre:</strong> {{ genre }}</p>
+        <p class="release"><strong>Release Date:</strong> {{ release_date }}</p>
+
+        {% if trailer %}
+        <a href="{{ trailer }}" target="_blank" class="trailer-button">
+          <span class="play-icon">&#9658;</span> PLAY TRAILER
+        </a>
+        {% endif %}
+
+        <h3>Overview</h3>
+        <p class="overview">{{ overview }}</p>
+
+        <h3>Actors</h3>
+        <ul class="actors">
+          {% for actor in actors %}
+          <li>{{ actor }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+  </body>
+</html>

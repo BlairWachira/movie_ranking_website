@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="{% static 'rank_app/search.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="overlay">
+        <h1 class="title">🎬 Search for a Movie</h1>
+        <form
+          action="{% url 'movie_result' %}"
+          method="get"
+          class="search-form"
+        >
+          <input
+            type="text"
+            name="query"
+            placeholder="Enter movie title..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit">🔍 Search</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.poster img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.poster-placeholder {
+  width: 300px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #444;
+  transform: rotate(-45deg);
+  font-size: 22px;
+  color: #888;
+  background-color: #eee;
+  text-align: center;
+}
+
+.info {
+  max-width: 600px;
+}
+
+.info h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.rating,
+.genre,
+.release {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.trailer-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: red;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.play-icon {
+  background-color: white;
+  color: red;
+  border-radius: 50%;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.overview {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.actors {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.actors li {
+  margin-bottom: 5px;
+}
+
+.error {
+  text-align: center;
+  padding: 60px;
+  font-size: 22px;
+  color: red;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .movie-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .poster img,
+  .poster-placeholder {
+    width: 90%;
+    height: auto;
+  }
+
+  .info {
+    text-align: center;
+  }
+}
+
+
